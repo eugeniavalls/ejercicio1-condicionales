@@ -71,3 +71,39 @@ const evenNumber = number => {
   }
 };
 evenNumber(1);
+
+const isLeap = year => {
+  if (year % 4 === 0 || (year % 400 === 0 && year % 100 !== 0)) {
+    console.log('El año ' + year + ' es bisiesto');
+  } else {
+    console.log('El año ' + year + ' no es bisiesto');
+  }
+};
+isLeap(2020);
+
+const numbersArray = numbers => {
+  const sum = numbers[0] + numbers[1] + numbers[2];
+  const average = sum / 2;
+  console.log(
+    'La suma de todos los numeros es ' +
+      sum +
+      ' y la media de ellos es ' +
+      average
+  );
+  if (numbers[0] < numbers[1] && numbers[0] < numbers[2]) {
+    console.log('El número menor es ' + numbers[0]);
+  } else if (numbers[1] < numbers[0] && numbers[1] < numbers[2]) {
+    console.log('El número menor es ' + numbers[1]);
+  } else {
+    console.log('El número menor es ' + numbers[2]);
+  }
+  if (numbers[0] > numbers[1] && numbers[0] > numbers[2]) {
+    console.log('El número mayor es ' + numbers[0]);
+  } else if (numbers[1] > numbers[0] && numbers[1] > numbers[2]) {
+    console.log('El número mayor es ' + numbers[1]);
+  } else {
+    console.log('El número menor es ' + numbers[2]);
+  }
+};
+
+numbersArray([2, 3, 1]);
