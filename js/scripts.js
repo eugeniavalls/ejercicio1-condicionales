@@ -107,3 +107,52 @@ const numbersArray = numbers => {
 };
 
 numbersArray([2, 3, 1]);
+
+const generateRandomNumber = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
+const randomNumber = generateRandomNumber(1, 5);
+console.log(randomNumber);
+
+// Crea una función que reciba una palabra, si la palabra tiene más de 5 caracteres la imprimirá en mayúsculas, si no en minúsculas. Resuelve el ejercicio con un if-else
+
+// toLowerCase(): Éste método devuelve la cadena en minúsculas.
+// 	const string = ‘HOLA’;
+// 	string.toLowerCase ((esto va siempre vacio)) // hola
+
+// toUpperCase(): Éste método devuelve la cadena en mayúsculas.
+// 	const string = ‘hola’;
+// 	string.toUpperCase ((esto va siempre vacio)) // HOLA
+
+const wordLength = word => {
+  if (word.length > 5) {
+    console.log(word.toUpperCase());
+  } else if (word.length < 5) {
+    console.log(word.toLowerCase());
+  }
+};
+wordLength('eugenia');
+
+// Repite el ejercicio anterior resolviendolo con un operador ternario
+
+const wordLength2 = word => {
+  word.length2 > 5
+    ? console.log(word.toUpperCase())
+    : console.log(word.toLowerCase());
+};
+wordLength2('hola');
+
+// Crea una función que reciba 2 verbos. La función debe imprimir a qué conjugación pertenecen. Por ejemplo, si la función recibe "andar" y "correr" debe imprimir "El verbo andar es de la primera conjugación y el verbo correr de la segunda conjugación".
+
+const verbs = verb => {
+  if (verb.endsWith('ar')) {
+    console.log('El verbo andar es de la primera conjugación');
+  } else if (verb.endsWith('er')) {
+    console.log('El verbo correr es de la segunda conjugación');
+  }
+};
+
+verbs('correr');
