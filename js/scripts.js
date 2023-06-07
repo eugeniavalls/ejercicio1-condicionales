@@ -119,14 +119,6 @@ console.log(randomNumber);
 
 // Crea una función que reciba una palabra, si la palabra tiene más de 5 caracteres la imprimirá en mayúsculas, si no en minúsculas. Resuelve el ejercicio con un if-else
 
-// toLowerCase(): Éste método devuelve la cadena en minúsculas.
-// 	const string = ‘HOLA’;
-// 	string.toLowerCase ((esto va siempre vacio)) // hola
-
-// toUpperCase(): Éste método devuelve la cadena en mayúsculas.
-// 	const string = ‘hola’;
-// 	string.toUpperCase ((esto va siempre vacio)) // HOLA
-
 const wordLength = word => {
   if (word.length > 5) {
     console.log(word.toUpperCase());
@@ -147,12 +139,120 @@ wordLength2('hola');
 
 // Crea una función que reciba 2 verbos. La función debe imprimir a qué conjugación pertenecen. Por ejemplo, si la función recibe "andar" y "correr" debe imprimir "El verbo andar es de la primera conjugación y el verbo correr de la segunda conjugación".
 
-const verbs = verb => {
-  if (verb.endsWith('ar')) {
-    console.log('El verbo andar es de la primera conjugación');
-  } else if (verb.endsWith('er')) {
-    console.log('El verbo correr es de la segunda conjugación');
+// const verbs = (verb1, verb2) => {
+//   if (verb1.endsWith('ar') && verb2.endsWith('ar')) {
+//     console.log('Los verbos son de la primera conjugación');
+//   } else if (verb1.endsWith('ar') && verb2.endsWith('er')) {
+//     console.log(
+//       'El primer verbo es de la primera conjugación y el segundo de la segunda'
+//     );
+//   } else if (verb1.endsWith('ar') && verb2.endsWith('ir')) {
+//     console.log(
+//       'El primer verbo es de la primera conjugación y el segundo de la tercera'
+//     );
+//   } else if (verb1.endsWith('er') && verb2.endsWith('ar')) {
+//     console.log(
+//       'El primer verbo es de la segunda conjugación y el segundo de la primera'
+//     );
+//   } else if (verb1.endsWith('er') && verb2.endsWith('er')) {
+//     console.log('Los verbos son de la segunda conjugación');
+//   } else if (verb1.endsWith('er') && verb2.endsWith('ir')) {
+//     console.log(
+//       'El primer verbo es de la segunda conjugación y el segundo de la tercera'
+//     );
+//   } else if (verb1.endsWith('ir') && verb2.endsWith('ar')) {
+//     console.log(
+//       'El primer verbo es de la tercera conjugación y el segundo de la primera'
+//     );
+//   } else if (verb1.endsWith('ir') && verb2.endsWith('er')) {
+//     console.log(
+//       'El primer verbo es de la tercera conjugación y el segundo de la segunda'
+//     );
+//   } else if (verb1.endsWith('ir') && verb2.endsWith('ir')) {
+//     console.log('Los verbos son de la tercera conjugación');
+//   }
+// };
+
+// verbs('correr', 'andar');
+
+const verbs = (verb1, verb2) => {
+  if (verb1.endsWith('ar') && verb2.endsWith('ar')) {
+    console.log('Los verbos son de la primera conjugación');
+  } else if (verb1.endsWith('ar') && verb2.endsWith('er')) {
+    console.log(
+      'El primer verbo es de la primera conjugación y el segundo de la segunda'
+    );
+  } else if (verb1.endsWith('ar') && verb2.endsWith('ir')) {
+    console.log(
+      'El primer verbo es de la primera conjugación y el segundo de la tercera'
+    );
+  } else if (verb1.endsWith('er') && verb2.endsWith('ar')) {
+    console.log(
+      'El primer verbo es de la segunda conjugación y el segundo de la primera'
+    );
+  } else if (verb1.endsWith('er') && verb2.endsWith('er')) {
+    console.log('Los verbos son de la segunda conjugación');
+  } else if (verb1.endsWith('er') && verb2.endsWith('ir')) {
+    console.log(
+      'El primer verbo es de la segunda conjugación y el segundo de la tercera'
+    );
+  } else if (verb1.endsWith('ir') && verb2.endsWith('ar')) {
+    console.log(
+      'El primer verbo es de la tercera conjugación y el segundo de la primera'
+    );
+  } else if (verb1.endsWith('ir') && verb2.endsWith('er')) {
+    console.log(
+      'El primer verbo es de la tercera conjugación y el segundo de la segunda'
+    );
+  } else if (verb1.endsWith('ir') && verb2.endsWith('ir')) {
+    console.log('Los verbos son de la tercera conjugación');
   }
 };
 
-verbs('correr');
+verbs('correr', 'andar');
+
+// Crear una función generateWord que reciba 3 palabras y genere una palabra usando 2 letras de cada palabra. Por ejemplo, "Hola", "Adios" y "Mano" podrían generar "aldona". Resuelve el ejercicio con una sóla línea dentro de la función.
+
+const generateWord = (word1, word2, word3) => {
+  const randomNumber1 = Math.floor(Math.random() * word1.length);
+  const randomNumber2 = Math.floor(Math.random() * word1.length);
+  const randomNumber3 = Math.floor(Math.random() * word2.length);
+  const randomNumber4 = Math.floor(Math.random() * word2.length);
+  const randomNumber5 = Math.floor(Math.random() * word3.length);
+  const randomNumber6 = Math.floor(Math.random() * word3.length);
+  return (
+    word1.charAt(randomNumber1) +
+    word1.charAt(randomNumber2) +
+    word2.charAt(randomNumber3) +
+    word2.charAt(randomNumber4) +
+    word3.charAt(randomNumber5) +
+    word3.charAt(randomNumber6)
+  );
+};
+
+const wordGenerate = generateWord('hola', 'adios', 'mano');
+console.log(wordGenerate);
+
+// Crea una función que reciba un email e imprima por separado el nombre y el dominio. "dorian@gmail.com" deberá imprimir "El usuario es dorian" y por otro lado "El dominio es gmail.com".
+
+const webSite = domain => {
+  console.log('El usuario es ' + domain.substring(0, domain.indexOf('@')));
+  console.log('El dominio es ' + domain.substring(domain.indexOf('@') + 1));
+};
+
+webSite('eugenia@gmail.com');
+
+// Crea una función que reciba una palabra de 5 letras y la devuelva intercalando mayúsculas y minúsculas, por ejemplo, si recibe "adios" deberá devolver "aDiOs
+
+const letters = word => {
+  return (
+    word.charAt(0).toLowerCase() +
+    word.charAt(1).toUpperCase() +
+    word.charAt(2).toLowerCase() +
+    word.charAt(3).toUpperCase() +
+    word.charAt(4).toLowerCase()
+  );
+};
+
+const lettersTransform = letters('adios');
+console.log(lettersTransform);
