@@ -256,3 +256,11 @@ const letters = word => {
 
 const lettersTransform = letters('adios');
 console.log(lettersTransform);
+
+// una funcion que reciba una palabra de tres letras y que nos imprima por consola esa palabra pero al reves
+
+const backwardsWord = word => {
+  return word.charAt(2) + word.charAt(1) + word.charAt(0);
+};
+const resultWord = backwardsWord('noa');
+console.log(resultWord);
